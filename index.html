@@ -1,0 +1,194 @@
+<css>
+  <style>
+    div.sticky {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      background-color: #eee;
+      opacity: 85%;
+      padding: 10px;
+      font-size: 20px;
+      box-shadow: 0px 1px 2px darkred;
+    }
+    
+    .title {
+      width: 100px;
+      height: auto;
+      margin: 0;
+      position: relative;
+    }
+    .title:hover {
+      background-color: transparent;
+      cursor: pointer;
+    }
+    .cart {
+      width: 25px;
+      height: auto;
+      top: 20%;
+      right: 7.5%;
+      position: absolute;
+    }
+    .cart:hover {
+      background-color: transparent;
+      cursor: pointer;
+    }
+    
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      margin: 0px;
+      background-color: #eee;
+    }
+    
+    .content {
+      padding: 0px;
+      margin: auto;
+      margin-top: 0px;
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .container {
+      max-height: 100vh;
+      overflow-y: scroll;
+      border: 1px solid gray;
+      scroll-snap-type: mandatory;
+      scroll-snap-points-y: repeat(3rem);
+      scroll-snap-type: y mandatory;
+    }
+    
+    li {
+      padding: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      scroll-snap-align: center;
+    }
+    
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: transparent;
+    }
+    
+    .shop {
+      font-size: 15px;
+      color: white;
+      text-align: center;
+      background-color: darkred;
+      opacity: 80%;
+      border-radius: 20px;
+      max-width: 350px;
+      margin-top: 50px;
+      left: 50%;
+      padding: 10px;
+      position: relative;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+      
+    .shop:hover {
+      color: #F08080;
+      box-shadow: 
+        0 1px 1px 0 
+        rgba(0,0,0,0.24), 
+        0 1px 1px 0 
+        rgba(0,0,0,0.19);
+    }
+    
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+      .text {font-size: 8px}
+    }
+    
+  </style>
+</css>
+
+<html>
+  <head>
+    <div class="sticky">
+      
+      <a href="index.html">
+        <img class="title"
+           src="https://live.staticflickr.com/65535/52365995092_e13db33e56_o.png"
+           width="50%"
+           height="auto">
+      </a>
+      
+      <a href="index.js">
+        <img class="cart"
+           src="https://live.staticflickr.com/65535/52365361170_8c3af73c3b_o.png"
+           width="5%"
+           height="auto">
+      </a>
+    </div>
+  </head>  
+
+  <body>  
+    <div class="container, content">
+       <ul>
+          <li>
+            <img 
+                    src="https://live.staticflickr.com/65535/52358633354_1de07321d8_o.jpg" 
+                    style="width:100%">
+          </li>
+          <li>
+            <img 
+                    src="https://live.staticflickr.com/65535/52358633324_3ebcbda796_o.jpg" 
+                    style="width:100%">
+          </li>
+          <li>
+            <img 
+                    src="https://live.staticflickr.com/65535/52358633314_af1bb6e240_o.jpg" 
+                    style="width:100%">
+          </li>
+          <li>
+            <img 
+                    src="https://live.staticflickr.com/65535/52357367627_b646ddbeb7_o.jpg" 
+                    style="width:100%">
+          </li>
+          <li>
+            <img 
+                    src="https://live.staticflickr.com/65535/52357367617_fa83ee70a6_o.jpg"
+                    style="width:100%">
+          </li>
+          <li>
+            <img 
+                    src="https://live.staticflickr.com/65535/52357367637_293a773bde_o.jpg" 
+                    style="width:100%">
+          </li>
+        </ul>
+    </div>
+    
+    <script>
+      window.onscroll = function() {myFunction()};
+
+      var header = document.getElementById("myHeader");
+      var sticky = header.offsetTop;
+
+      function myFunction() {
+        if (window.pageYOffset > sticky) {
+          header.classList.add("sticky");
+        } else {
+          header.classList.remove("sticky");
+        }
+      }
+    </script>
+  </body>
+    
+  <footer>
+    <a href="index.js">
+      <button class="shop">
+      Shop Now
+      </button>
+    </a>
+  </footer>
+  
+</html>

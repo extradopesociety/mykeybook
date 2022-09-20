@@ -1,0 +1,272 @@
+<css>
+    <style>
+      div.sticky {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        background-color: #eee;
+        padding: 10px;
+        font-size: 20px;
+        box-shadow: 0px 1px 2px darkred;
+      }
+      
+      .title {
+        width: 100px;
+        height: auto;
+        margin: 0;
+        position: relative;
+      }
+      .title:hover {
+        background-color: transparent;
+        cursor: pointer;
+      }
+      
+      * {
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+      
+      body {
+        margin: 0px;
+        background-color: #eee;
+      }
+      
+      .container {
+        margin: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        background: #eee;
+        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .item {
+        height: 20px;
+        border-bottom: 1px solid darkred;
+        padding: 0;
+        color: darkred;
+        font-size: 18px;
+        font-weight: 400;
+      }
+  
+      .cart {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #eee;
+        font-family:'Roboto' sans-serif;
+        color: darkred;
+        text-align: center;
+        border-radius: 5px;
+        text-shadow: 0px 1px 1px #000000;
+      }
+  
+      .item:nth-child(3) {
+        border-top:  1px solid #ddd;
+        border-bottom:  1px solid #ddd;
+      }
+      
+      .buttons {
+        position: relative;
+        padding-top: 30px;
+        margin-right: 60px;
+      }
+      
+      .image {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        padding-top: 30px;
+        text-align: center;
+      }
+  
+      .description {
+        padding-top: 10px;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+        width: 115px;
+      }
+  
+      .description span {
+        display: block;
+        font-size: 14px;
+        color: #43484D;
+        font-weight: 400;
+      }
+  
+      .description span:first-child {
+        margin-bottom: 5px;
+      }
+      .description span:last-child {
+        font-weight: 300;
+        margin-top: 8px;
+        color: darkred;
+      }
+      
+      .quantity {
+        padding-top: 20px;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+      }
+      .quantity input {
+        -webkit-appearance: none;
+        border: none;
+        text-align: center;
+        width: 32px;
+        font-size: 16px;
+        color: #43484D;
+        font-weight: 300;
+      }
+  
+      button[class*=btn] {
+        width: 30px;
+        height: 30px;
+        background-color: #E1E8EE;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+      }
+      .minus-btn {
+        margin-bottom: 3px;
+      }
+      .plus-btn {
+        margin-top: 2px;
+      }
+  
+      button:focus,
+      input:focus {
+        outline:0;
+      }
+      
+      .total-price {
+        padding-top: 20px;
+        padding-bottom: 15px;
+        text-align: center;
+        font-size: 16px;
+        color: darkgreen;
+        font-weight: 300;
+      }
+      
+      @media (max-width: 1000px) {
+        .container {
+          width: 100%;
+          height: auto;
+          overflow: hidden;
+        }
+        .item {
+          height: auto;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .image img {
+          width: 50%;
+        }
+        .image,
+        .quantity,
+        .description {
+          width: 100%;
+          text-align: center;
+          margin: 6px 0;
+        }
+        .buttons {
+          margin-right: 20px;
+        }
+      }
+      
+      .shop {
+        font-size: 15px;
+        color: white;
+        text-align: center;
+        background-color: darkred;
+        opacity: 80%;
+        border-radius: 20px;
+        max-width: 350px;
+        margin-top: 30px;
+        left: 50%;
+        padding: 10px;
+        position: relative;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+        
+      .shop:hover {
+        color: #F08080;
+        box-shadow: 
+          0 1px 1px 0 
+          rgba(0,0,0,0.24), 
+          0 1px 1px 0 
+          rgba(0,0,0,0.19);
+      }
+      
+    </style>
+  </css>
+  
+  <html>
+    <body>
+      <div class="sticky">
+        <a href="index.html">
+          <img class="title"
+             src="https://live.staticflickr.com/65535/52365995092_e13db33e56_o.png"
+             width="50%"
+             height="auto">
+        </a>
+      </div>
+      
+      <div class="container">
+        <div class="cart">
+          Shopping Cart
+        </div>
+        
+        <!--Product One-->
+          <div class="image">
+            <img src="https://live.staticflickr.com/65535/52363270985_40eba626cb_o.jpg" 
+                 width="100%"/>
+          </div>
+          
+          <div class="description">
+            <span>My Key Book</span>
+            <span>Bearish Red</span>
+          </div>
+          
+          <div class="quantity">
+            <button class="plus-btn" type="button" name="button">
+              +
+            </button>
+            <input type="text" name="name" value="1">
+            <button class="minus-btn" type="button" name="button">
+              -
+            </button>
+          </div>
+          
+          <div class="total-price">
+            $15
+          </div>
+  
+        </div>
+      </div>
+      
+      <script>
+        window.onscroll = function() {myFunction()};
+  
+        var header = document.getElementById("header");
+        var sticky = header.offsetTop;
+  
+        function myFunction() {
+          if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+          } else {
+            header.classList.remove("sticky");
+          }
+        };
+      </script>
+    </body>
+  
+    <footer>
+      <button class="shop">
+          Add to Cart
+      </button>
+    </footer>
+    
+  </html>
