@@ -17,18 +17,8 @@
       margin: 0;
       position: relative;
     }
+    
     .title:hover {
-      background-color: transparent;
-      cursor: pointer;
-    }
-    .cart {
-      width: 25px;
-      height: auto;
-      top: 20%;
-      right: 7.5%;
-      position: absolute;
-    }
-    .cart:hover {
       background-color: transparent;
       cursor: pointer;
     }
@@ -84,11 +74,11 @@
       text-align: center;
       background-color: darkred;
       opacity: 80%;
-      border-radius: 20px;
+      border-radius: 4px;
       max-width: 350px;
       margin-top: 50px;
       left: 50%;
-      padding: 10px;
+      padding: 8px 12px;
       position: relative;
       -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
@@ -107,10 +97,8 @@
     @media only screen and (max-width: 300px) {
       .text {font-size: 8px}
     }
-    
   </style>
 </css>
-
 <html>
   <head>
     <div class="sticky">
@@ -119,13 +107,6 @@
         <img class="title"
            src="https://live.staticflickr.com/65535/52365995092_e13db33e56_o.png"
            width="50%"
-           height="auto">
-      </a>
-      
-      <a href="cart.html">
-        <img class="cart"
-           src="https://live.staticflickr.com/65535/52365361170_8c3af73c3b_o.png"
-           width="5%"
            height="auto">
       </a>
     </div>
@@ -168,7 +149,7 @@
     </div>
     
     <script>
-      window.onscroll = function() {myFunction()};
+            window.onscroll = function() {myFunction()};
 
       var header = document.getElementById("myHeader");
       var sticky = header.offsetTop;
@@ -179,16 +160,60 @@
         } else {
           header.classList.remove("sticky");
         }
-      }
+      };
     </script>
   </body>
-    
+
   <footer>
-    <a href="cart.html">
-      <button class="shop">
-      Shop Now
-      </button>
-    </a>
+        <!-- Load Stripe.js on your website. -->
+    <script src="https://js.stripe.com/v3"></script>
+
+    <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+    <button class="shop"
+            id="checkout-button-price_1LjXt8C32FFFZjIKuNjpZ6ix"
+            role="link"
+            type="button">
+      Checkout
+    </button>
+
+    <div id="error-message"></div>
+
+    <script>
+    (function() {
+      var stripe = Stripe('pk_test_51LjXp8C32FFFZjIKlaUkqJuZwEAtbny2B18VU4k1hVqnTAN0wpH4sqlBX4AaCUrySZBiHYwxRxYAE5q23kGEPhrm00Rx4sCOiE');
+
+      var checkoutButton = document.getElementById('checkout-button-price_1LjXt8C32FFFZjIKuNjpZ6ix');
+      checkoutButton.addEventListener('click', function () {
+        /*
+         * When the customer clicks on the button, redirect
+         * them to Checkout.
+         */
+        stripe.redirectToCheckout({
+          lineItems: [{price: 'price_1LjXt8C32FFFZjIKuNjpZ6ix', quantity: 1}],
+          mode: 'payment',
+          /*
+           * Do not rely on the redirect to the successUrl for fulfilling
+           * purchases, customers may not always reach the success_url after
+           * a successful payment.
+           * Instead use one of the strategies described in
+           * https://stripe.com/docs/payments/checkout/fulfill-orders
+           */
+          successUrl: window.location.protocol + '//mykeybook.xyz/success',
+          cancelUrl: window.location.protocol + '//mykeybook.xyz/canceled',
+        })
+        .then(function (result) {
+          if (result.error) {
+            /*
+             * If `redirectToCheckout` fails due to a browser or network
+             * error, display the localized error message to your customer.
+             */
+            var displayError = document.getElementById('error-message');
+            displayError.textContent = result.error.message;
+          }
+        });
+      });
+    })();
+    </script>
   </footer>
-  
+
 </html>
