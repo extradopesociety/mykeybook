@@ -165,31 +165,31 @@
   </body>
 
   <footer>
-        <!-- Load Stripe.js on your website. -->
+    <!-- Load Stripe.js on your website. -->
     <script src="https://js.stripe.com/v3"></script>
 
     <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
     <button class="shop"
-            id="checkout-button-price_1LjXt8C32FFFZjIKuNjpZ6ix"
-            role="link"
-            type="button">
-      Checkout
-    </button>
+                id="checkout-button-price_1LjXt8C32FFFZjIKuNjpZ6ix"
+                role="link"
+                type="button">
+          Checkout
+        </button>
 
     <div id="error-message"></div>
 
     <script>
     (function() {
-      var stripe = Stripe('pk_test_51LjXp8C32FFFZjIKlaUkqJuZwEAtbny2B18VU4k1hVqnTAN0wpH4sqlBX4AaCUrySZBiHYwxRxYAE5q23kGEPhrm00Rx4sCOiE');
+      var stripe = Stripe('pk_live_51LjXp8C32FFFZjIKLOkrMxFQNmjGfQeYlk2jKs26au9dEG2x6Jdxp11ZgFmHtOFG5PqvWPlGCHoYQLHyfegnSDIV00d84bFnp9');
 
-      var checkoutButton = document.getElementById('checkout-button-price_1LjXt8C32FFFZjIKuNjpZ6ix');
+      var checkoutButton = document.getElementById('checkout-button-price_1LkHaSC32FFFZjIKCYmatAhT');
       checkoutButton.addEventListener('click', function () {
         /*
          * When the customer clicks on the button, redirect
          * them to Checkout.
          */
         stripe.redirectToCheckout({
-          lineItems: [{price: 'price_1LjXt8C32FFFZjIKuNjpZ6ix', quantity: 1}],
+          lineItems: [{price: 'price_1LkHaSC32FFFZjIKCYmatAhT', quantity: 1}],
           mode: 'payment',
           /*
            * Do not rely on the redirect to the successUrl for fulfilling
