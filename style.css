@@ -1,0 +1,99 @@
+     .background {
+        background-color: #CD5C5C;
+     }
+      
+     .pfp {
+       background-color: #FFF5EE;
+       border-radius: 180px;
+       padding: 10px;
+       box-shadow: 0 5px 5px rgba(0,0,0,0.19), 0 2px 2px rgba(0,0,0,0.23);
+     }
+     
+     img {
+       margin: auto;
+       margin-top: 40px;
+       display: block;
+     }
+      
+     .title {
+       color: #FFF5EE;
+       text-align: center;
+       background-color: #B22222;
+       border-radius: 15px;
+       padding: 10px;
+       margin: auto;
+       margin-bottom: 40px;
+       margin-top: 25px;
+       width: 150px;
+       box-shadow: 0 5px 5px rgba(0,0,0,0.19), 0 2px 5px rgba(0,0,0,0.23);
+     }
+      
+     .main-text {
+       color: #800000;
+       text-align: center;
+       margin-bottom: 30px;
+     }
+      
+     .secondary-text {
+       color: #FFF5EE;
+       text-align: center;
+       font-size: 16px;
+       margin-top: 40px;
+     }
+      
+     ul {
+        list-style: none;
+        padding-right: 15px;
+     }
+     
+     li {
+        text-align: center;
+        margin-top: 50px;
+        margin-right: 18px;
+        margin-left: auto;
+        margin-bottom: 30px;
+     }
+    
+     a {
+      color: #FFF5EE;
+      text-decoration: none;
+     }
+     
+     a:hover {
+      color: #CD5C5C;  
+     }
+     
+     button {
+        font-size: 15px;
+        text-align: center;
+        background-color: #800000;
+        width: 250px;
+        padding: 20px;
+        border-radius: 20px;
+        border: none;
+     }
+      
+     button:hover {
+        color: #F08080;
+        box-shadow: 0 2px 1px 0 rgba(0,0,0,0.24), 0 2px 1px 0 rgba(0,0,0,0.19);
+     }
+     
+     .column {
+        margin-top: 30px;
+        margin-left: auto;
+        padding: 5px;
+        padding-bottom: 20px;
+     }
+      
+     .row {
+        text-align: center;
+        content: "";
+        clear: both;
+     }
+     
+     img:hover {
+        box-shadow: 0 6px 6px 0 rgba(0,0,0,0.24), 0 1px 1px 0 rgba(0,0,0,0.19);
+     }   
+
+
+
